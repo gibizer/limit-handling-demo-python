@@ -23,7 +23,7 @@ class Limit:
         self.max_team_members = max_team_members
 
 
-# NOTE(gibi): These pre-defined limits are hardcoded now but I would but them
+# NOTE(gibi): These pre-defined limits are hardcoded now but I would put them
 # in the DB (out of scope) so eventually they can be changed via an admin API.
 FreePlan = Limit(
     concurrent_builds=1,
@@ -112,7 +112,7 @@ class PublicApp(App):
         :param custom_limit: The new limit for this app
         """
         # NOTE(gibi): this operation needs escalated privileges (e.g. admin)
-        # as the owner of the app cannot set the its own app limits. But
+        # as the owner of the app cannot set its own app's limits. But
         # authorization is out of scope.
         self._limit = custom_limit
 
@@ -155,7 +155,7 @@ class User:
         return PrivateApp(owner=self)
 
     def upload_public_app(self):
-        """ Crate a new public app for the user.
+        """ Create a new public app for the user.
 
         :return: The PublicApp instance created
         """
